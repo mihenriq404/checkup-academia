@@ -1,21 +1,24 @@
 
 from questionario import collect_profile
+from conhecimento import gerar_fatos_iniciais
+from inferencia import inferir
+from explicacao import explicar_resultado
 
 
 def main():
     print("=" * 40)
-    print("          FITADVISOR")
-    print(" Sistema Especialista para Academias")
+    print("FITADVISOR")
+    print("Sistema Especialista para Academias")
     print("=" * 40)
 
-    profile = collect_profile()
+    perfil = collect_profile()
 
-    print("\n=== PERFIL REGISTRADO ===")
+    fatos_iniciais = gerar_fatos_iniciais(perfil)
 
-    for key, value in profile.items():
-        print(f"{key}: {value}")
+    resultado = inferir(fatos_iniciais)
 
-    print("\nInformações coletadas com sucesso!")
+    print("\n=== RESULTADO DO SISTEMA ===")
+    print(explicar_resultado(resultado))
 
 
 if __name__ == "__main__":

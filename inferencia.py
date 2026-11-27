@@ -44,7 +44,7 @@ def inferir(fatos_iniciais):
 
     regras_de_recomendacao = [
         regra
-        for regra in regrasativadas
+        for regra in regras_ativadas
         if str(regra.get("conclusao", "")).startswith("plano")
     ]
 
